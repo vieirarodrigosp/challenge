@@ -22,12 +22,12 @@ public class ChallengeController {
 	@Autowired
 	private ChallengeBO challengeBO;
 	@ApiOperation(value="This service creates a new Challenge in the database.")
-	@PostMapping(path = "/v1/Challenges")
+	@PostMapping(path = "/v1/challenges")
 	public @ResponseBody ChallengeVO save(@RequestBody ChallengeDTO Challenge) {
 		return challengeBO.save(Challenge);
 	}
 	@ApiOperation(value="This service seeks to Challenge by CompanyId.")
-	@GetMapping(path = "/v1/Challenges/{id}")
+	@GetMapping(path = "/v1/challenges/{id}")
 	public @ResponseBody Optional<ChallengeVO> findByCompanyId(@PathVariable int id) {
 		return challengeBO.findById(id);
 	}

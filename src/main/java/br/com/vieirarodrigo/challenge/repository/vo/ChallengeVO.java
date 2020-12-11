@@ -1,5 +1,6 @@
 package br.com.vieirarodrigo.challenge.repository.vo;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -20,12 +21,13 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name = "CHALLENGE")
-public class ChallengeVO {
+public class ChallengeVO implements Serializable {
+	public static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
-	private String name;
-	private String slug;
+	public int id;
+	public String name;
+	public String slug;
 	@Column(name = "CREATED_AT")
-	private Date created;
+	public Date created;
 }
